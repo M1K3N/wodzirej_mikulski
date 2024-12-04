@@ -2,6 +2,7 @@
 $main-color: #000000;
 $secondary-color: #FFFFFF;
 $accent-color: #E5B047;
+$shadow-color: #646464;
 
 $size-default:1rem;
 $size-small:0.2rem;
@@ -90,14 +91,16 @@ hr{
     margin-bottom: $size-default*4;
 }
 
-
+.text-align--center{
+    text-align: center;
+}
 
 .highlited-text{
     color: $accent-color;
 }
 
 #about{
-    text-align: center;
+    width: 100%;
     .about__container{
         background-color: $secondary-color;
         color: $main-color;
@@ -121,7 +124,6 @@ hr{
 }
 
 #attractions{
-    text-align: center;
     .attractions__cards{
         width: 100%;
         display: flex;
@@ -132,17 +134,19 @@ hr{
         background-color: $secondary-color;
         font-weight: 700;
         height: 30vw;
-        width: 18%;
+        width: 20%;
         border-radius: 10%;
         display: flex;
         flex-direction: column;
         align-items: center;
         overflow: visible;
         flex-shrink: 0;
+        box-shadow: -5px 3px 2px $shadow-color;
         img{
-            width: 140%;
+            width: 120%;
             height: auto;
             border-radius: 10%;
+            box-shadow: -5px 3px 2px $shadow-color;
         }
         .attractions__card--title{
             display: flex;
@@ -153,6 +157,86 @@ hr{
     }
 }
 
+#key-traits{
+    .key-traits__grid-container{
+        height: 55vh;
+        display: grid;
+        grid-template-columns: 7% 38% 10% 38% 7%;
+        grid-template-rows: 50% 50%;
+        grid-template-areas:". first_trait vertical_line third_trait ."
+                            ". second_trait vertical_line fourth_trait .";
+        .key-trait{
+            &:nth-child(1){
+                grid-area: first_trait;
+                
+            }
+            &:nth-child(2){
+                grid-area: second_trait;
+            }
+            &:nth-child(4){
+                grid-area: third_trait;
+                display: flex;
+                align-items: flex-end;
+                justify-content: center;
+            }
+            &:nth-child(5){
+                grid-area: fourth_trait;
+                display: flex;
+                align-items: flex-end;
+                justify-content: center;
+            }
+        }
+    }
+    .vertical-line{
+        grid-area: vertical_line;
+        background-color: $accent-color;
+        height: 100%;
+        border: none;
+        width: $size-small;
+        margin-bottom: $size-default*4;
+    }
+    .key-trait{
+        font-weight: 400;
+    }
+}
 
+#offers{
+    .offers--list{
+        display: grid;
+        grid-template-columns: 7% 38% 10% 38% 7%;
+        grid-template-rows: 50% 50%;
+        grid-template-areas: ". first_offer . third_offer ."
+                             ". second_offer . fourth_offer .";
+        .offer{
+            &:nth-child(1){
+                grid-area: first_offer;
+            }
+            &:nth-child(2){
+                grid-area: second_offer;
+            }
+            &:nth-child(3){
+                grid-area: third_offer;
+            }
+            &:nth-child(4){
+                grid-area: fourth_offer;
+            }
+        }
+    }
+}
+
+#contact{
+
+    &:after {
+        content: "";
+        position: absolute;
+        top: calc(50% + 20px); /* Dostosowane do wysokości hr */
+        left: 0;
+        width: 100%;
+        height: calc(50% - 20px); /* Wolna przestrzeń pod hr */
+        background: url('tlo-obrazek.jpg') no-repeat center center;
+        background-size: cover;
+        z-index: 1;
+    }
+}
 
 
