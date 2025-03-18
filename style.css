@@ -87,45 +87,82 @@ a {
   font-size: 2rem;
 }
 
+@keyframes scrollLeft {
+  to {
+    left: -500px;
+  }
+}
+@keyframes scrollRight {
+  to {
+    right: -500px;
+  }
+}
 #hero {
   height: 100vh;
   display: grid;
-  grid-template-columns: 50% 40% 10%;
-  grid-template-rows: 20vh 35vh 13vh 7vh 26vh;
-  grid-template-areas: ". . ." "hero_img hero_title ." "hero_img hero_subtitle ." "hero_img hero_button ." ". . .";
+  grid-template-rows: 20vh 1fr 1fr 1fr 15vh;
+  grid-template-columns: 100vw;
 }
-#hero .hero__titles--main-title {
+#hero .itemRight {
+  right: max(1600px, 100% + 200px);
+  animation-name: scrollRight;
+}
+#hero .itemLeft {
+  left: max(1600px, 100%);
+  animation-name: scrollLeft;
+}
+#hero .item1 {
+  animation-delay: -70s;
+}
+#hero .item2 {
+  animation-delay: -60s;
+}
+#hero .item3 {
+  animation-delay: -50s;
+}
+#hero .item4 {
+  animation-delay: -40s;
+}
+#hero .item5 {
+  animation-delay: -30s;
+}
+#hero .hero-title1 {
   font-size: 7rem;
-  align-self: end;
-  font-weight: 900;
-  margin: 0;
-  grid-area: hero_title;
-  animation: 1s linear fadeInRight;
+  grid-row: 2/3;
+  grid-column: 1;
+  z-index: 0;
+  position: relative;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(0, 0, 0) 20%, rgb(0, 0, 0) 80%, rgba(0, 0, 0, 0));
 }
-#hero .hero__titles--subtitle {
-  align-self: center;
-  font-weight: 700;
-  grid-area: hero_subtitle;
-  font-size: 1.4rem;
-  color: #E5B047;
-  opacity: 0;
-  animation: 1s linear fadeInRight 1s forwards;
+#hero .hero-title1 div {
+  position: absolute;
+  animation-timing-function: linear;
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
+}
+#hero .hero-title2 {
+  font-size: 7rem;
+  grid-row: 4/5;
+  grid-column: 1;
+  z-index: 2;
+  position: relative;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(0, 0, 0) 20%, rgb(0, 0, 0) 80%, rgba(0, 0, 0, 0));
+  margin-top: 80px;
+}
+#hero .hero-title2 div {
+  position: absolute;
+  animation-timing-function: linear;
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
 }
 #hero .hero__image-container {
   text-align: center;
-  grid-area: hero_img;
+  grid-row: 2/5;
+  grid-column: 1;
   align-self: center;
-}
-#hero .hero__button {
-  grid-area: hero_button;
-  background-color: #E5B047;
-  color: #FFFFFF;
-  font-size: 1.4rem;
-  font-weight: 700;
-  border-radius: 0.6rem;
-  width: 30%;
-  opacity: 0;
-  animation: 1.5s linear appear 2s forwards, 2s linear pulse 3.5s;
+  z-index: 1;
 }
 
 hr {
