@@ -22,7 +22,9 @@ body{
     height: 100%;
     margin: 0;
     font-family: "Lato", sans-serif;
-    background-color: $main-color;
+    // background-color: $main-color;
+    background: radial-gradient(circle at 0% 100%, #3b3b3b, #222222, #0b0b0b, #000000, #000000, #0b0b0b, #222222, #3b3b3b);
+    background-attachment: fixed;
     color: $secondary-color;
 }
 
@@ -76,12 +78,14 @@ a{
         }  }        
 
 .section-grid{
-    height: 70vh;
+    height: 100vh;
     display: grid;
-    grid-template-rows: $size-default*2 25% 1fr $size-default*2;
+    grid-template-rows: 15vh $size-default*2 25% 1fr $size-default*2 15vh;
     grid-template-areas:"."
+                        "."
                         "section_title"
                         "section_content"
+                        "."
                         ".";
 }
 
@@ -100,6 +104,7 @@ a{
 }
 
 #hero{
+    
     height: 100vh;
     display: grid;
     grid-template-columns: 50% 40% 10%;
@@ -130,6 +135,9 @@ a{
         text-align: center;
         grid-area: hero_img;
         align-self: center;
+        // img{
+        //     background-image: radial-gradient(closest-side, rgb(145, 45, 170), transparent);
+        // }
     }
     .hero__button{
         grid-area: hero_button;
@@ -190,7 +198,7 @@ hr{
 }
 
 #attractions{
-    background: linear-gradient(135deg, #16161655 25%, transparent 25%) -10px 0/ 20px 20px, linear-gradient(225deg, #161616 25%, transparent 25%) -10px 0/ 20px 20px, linear-gradient(315deg, #16161655 25%, transparent 25%) 0px 0/ 20px 20px, linear-gradient(45deg, #161616 25%, #000000 25%) 0px 0/ 20px 20px;
+    // background: linear-gradient(135deg, #16161655 25%, transparent 25%) -10px 0/ 20px 20px, linear-gradient(225deg, #161616 25%, transparent 25%) -10px 0/ 20px 20px, linear-gradient(315deg, #16161655 25%, transparent 25%) 0px 0/ 20px 20px, linear-gradient(45deg, #161616 25%, #000000 25%) 0px 0/ 20px 20px;
 
     .attractions__cards{
         width: 100%;
@@ -276,7 +284,7 @@ hr{
 }
 
 #offers{
-    background: linear-gradient(135deg, #16161655 25%, transparent 25%) -10px 0/ 20px 20px, linear-gradient(225deg, #161616 25%, transparent 25%) -10px 0/ 20px 20px, linear-gradient(315deg, #16161655 25%, transparent 25%) 0px 0/ 20px 20px, linear-gradient(45deg, #161616 25%, #000000 25%) 0px 0/ 20px 20px;
+    // background: linear-gradient(135deg, #16161655 25%, transparent 25%) -10px 0/ 20px 20px, linear-gradient(225deg, #161616 25%, transparent 25%) -10px 0/ 20px 20px, linear-gradient(315deg, #16161655 25%, transparent 25%) 0px 0/ 20px 20px, linear-gradient(45deg, #161616 25%, #000000 25%) 0px 0/ 20px 20px;
     .offers__subtitle{
         max-width: 60%;
         margin: $size-default auto 0 auto;
@@ -311,7 +319,7 @@ hr{
 #contact{
     height: 100vh;
     display: grid;
-    grid-template-rows: 88px 9% 1fr;
+    grid-template-rows: 100px 9% 1fr;
     grid-template-areas:"."
                         "contact_title"
                         "contact_content";
