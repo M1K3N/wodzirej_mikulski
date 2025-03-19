@@ -11,7 +11,6 @@ body {
   height: 100%;
   margin: 0;
   font-family: "Lato", sans-serif;
-  background: radial-gradient(circle at 0% 100%, #3b3b3b, #222222, #0b0b0b, #000000, #000000, #0b0b0b, #222222, #3b3b3b);
   background-attachment: fixed;
   color: #FFFFFF;
 }
@@ -56,7 +55,7 @@ a {
 .main-header .nav-desktop__items .nav-desktop__item {
   margin: 0 1.5rem;
   font-weight: 700;
-  text-shadow: 1px 1px 0 #000000, -1px 1px 0 #000000, -1px -1px 0 #000000, 1px -1px 0 #000000;
+  text-shadow: 1px 1px 0 #030303, -1px 1px 0 #030303, -1px -1px 0 #030303, 1px -1px 0 #030303;
 }
 .main-header .nav-desktop__items .nav-desktop__item a {
   text-decoration: none;
@@ -67,10 +66,10 @@ a {
 }
 
 .section-grid {
-  height: 100vh;
+  height: 70vh;
   display: grid;
-  grid-template-rows: 15vh 2rem 25% 1fr 2rem 15vh;
-  grid-template-areas: "." "." "section_title" "section_content" "." ".";
+  grid-template-rows: 25% 1fr;
+  grid-template-areas: "section_title" "section_content";
 }
 
 .grid-title {
@@ -98,10 +97,12 @@ a {
   }
 }
 #hero {
+  background: radial-gradient(circle at 0% 50%, rgb(57, 57, 57) 0%, rgb(38, 38, 38) 9%, rgb(22, 22, 22) 21%);
   height: 100vh;
   display: grid;
   grid-template-rows: 20vh 1fr 1fr 1fr 15vh;
   grid-template-columns: 100vw;
+  font-weight: 900;
 }
 #hero .itemRight {
   right: max(1600px, 100% + 200px);
@@ -131,9 +132,9 @@ a {
   grid-row: 2/3;
   grid-column: 1;
   z-index: 0;
+  color: #a0a0a0;
   position: relative;
   overflow: hidden;
-  mask-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(0, 0, 0) 20%, rgb(0, 0, 0) 80%, rgba(0, 0, 0, 0));
 }
 #hero .hero-title1 div {
   position: absolute;
@@ -148,8 +149,7 @@ a {
   z-index: 2;
   position: relative;
   overflow: hidden;
-  mask-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(0, 0, 0) 20%, rgb(0, 0, 0) 80%, rgba(0, 0, 0, 0));
-  margin-top: 80px;
+  margin-top: 5vh;
 }
 #hero .hero-title2 div {
   position: absolute;
@@ -184,6 +184,7 @@ hr {
 }
 
 #about {
+  background: radial-gradient(circle at 100% 50%, rgb(57, 57, 57) 0%, rgb(38, 38, 38) 9%, rgb(22, 22, 22) 21%);
   width: 100%;
 }
 #about .about__container {
@@ -205,10 +206,16 @@ hr {
   box-shadow: 5px 5px 2px #2c2c2c;
 }
 
+#attractions {
+  background: rgb(22, 22, 22);
+}
 #attractions .attractions__cards {
   width: 100%;
   display: flex;
   justify-content: center;
+  animation: fadeInBottom linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 45%;
 }
 #attractions .attractions__card {
   background-color: #FFFFFF;
@@ -238,6 +245,9 @@ hr {
   height: 100%;
 }
 
+#key-traits {
+  background: radial-gradient(circle at 0% 50%, rgb(57, 57, 57) 0%, rgb(38, 38, 38) 9%, rgb(22, 22, 22) 21%);
+}
 #key-traits .key-traits__grid-container {
   height: 100%;
   display: grid;
@@ -279,6 +289,9 @@ hr {
   margin: 0;
 }
 
+#offers {
+  background: rgb(22, 22, 22);
+}
 #offers .offers__subtitle {
   max-width: 60%;
   margin: 1rem auto 0 auto;
@@ -307,6 +320,7 @@ hr {
 }
 
 #contact {
+  background: rgb(22, 22, 22);
   height: 100vh;
   display: grid;
   grid-template-rows: 100px 9% 1fr;
@@ -318,8 +332,9 @@ hr {
 #contact .grid-content--contact {
   grid-area: contact_content;
   position: relative;
+  z-index: 1;
 }
-#contact .grid-content--contact:before {
+#contact .grid-content--contact:after {
   content: "";
   position: absolute;
   background: url("Images/kontakt_bg.jpg") center top/cover no-repeat border-box;
@@ -331,7 +346,7 @@ hr {
   height: 100%;
 }
 #contact .grid-content--contact .contact__informations {
-  animation: appear linear;
+  animation: fadeInBottom linear;
   animation-timeline: view();
   animation-range: entry 0% cover 45%;
   width: 35rem;
@@ -360,7 +375,7 @@ hr {
 }
 #contact .grid-content--contact .contact__informations .contact__information .contact__information--text {
   width: 70%;
-  color: #000000;
+  color: #030303;
   font-size: 1.5rem;
   font-weight: 700;
 }
@@ -426,7 +441,7 @@ hr {
 @keyframes fadeInBottom {
   from {
     opacity: 0;
-    transform: translateY(100px);
+    transform: translateY(200px);
   }
   to {
     opacity: 1;
