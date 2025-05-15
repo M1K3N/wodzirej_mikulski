@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
-$main-color: #030303;
-$secondary-color: #FFFFFF;
+$main-color: #0e0e0e;
+$secondary-color: #1a1a1a;
+$white: #f7f7f7;
 $accent-color: #E5B047;
 $shadow-color: #c4c4c4;
-$shadow-color2: #2c2c2c;
+$shadow-color2: #242424;
 
 
 $size-default:1rem;
@@ -12,6 +13,7 @@ $size-small:0.2rem;
 
 *{
     box-sizing: border-box;
+    color: $white;
 }
 
 html{
@@ -23,12 +25,21 @@ body{
     margin: 0;
     font-family: "Lato", sans-serif;
     background-attachment: fixed;
-    color: $secondary-color;
+    
 }
 
 a{
     text-decoration: none;
-    color: $secondary-color;
+}
+
+.flex-evenly{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+}
+
+.height100{
+    height: 100%;
 }
 
 .main-header{
@@ -59,15 +70,12 @@ a{
         .nav-desktop__items{
             list-style: none;
             display: flex;
-            margin: 0;
             padding: 0;
             .nav-desktop__item{
                 margin: 0 $size-default*1.5;
                 font-weight: 700;
                 text-shadow: 1px 1px 0 $main-color, -1px 1px 0 $main-color, -1px -1px 0 $main-color, 1px -1px 0 $main-color;
                 a{
-                    text-decoration: none;
-                    color: $secondary-color;
                     &:hover{
                         color: $accent-color;
                     }
@@ -76,9 +84,10 @@ a{
         }  }        
 
 .section-grid{
-    height: 70vh;
+    height: 80vh;
     display: grid;
     grid-template-rows: 25% 1fr;
+    grid-template-columns: 100%;
     grid-template-areas:"section_title"
                         "section_content"
                         ;
@@ -98,53 +107,24 @@ a{
     font-size: $size-default*2;
 }
 
-@keyframes scrollLeft {
-    to {
-      left: -500px;
-    }
-  }
-
-@keyframes scrollRight {
-    to {
-      right: -500px;
-    }
-  }
+.secondary-background{
+    background-color: $secondary-color;
+    border-radius: 25px;
+    margin: $size-default;
+    padding: $size-default*2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
 #hero{
-    background: radial-gradient(circle at 0% 50%, rgba(57,57,57,1) 0%, rgba(38,38,38,1) 9%, rgba(22,22,22,1) 21%);
+    background: radial-gradient(circle at 0% 50%, rgba(51,51,51,1) 0%, rgba(28,28,28,1) 9%, rgba(14,14,14,1) 21%);
     height: 100vh;
     display: grid;
     grid-template-rows: 20vh 1fr 1fr 1fr 15vh;
-    grid-template-columns: 100vw;
+    grid-template-columns: 100%;
     font-weight: 900;
-    .itemRight {
-        right: max(calc(200px * 8), calc(100% + 200px));
-        animation-name: scrollRight;
-    }
 
-    .itemLeft {
-        left: max(calc(200px * 8), 100%);
-        animation-name: scrollLeft;
-    }
-    .item1 {
-        animation-delay: calc(80s / 8 * (8 - 1) * -1);
-      }
-      
-      .item2 {
-        animation-delay: calc(80s / 8 * (8 - 2) * -1);
-      }
-      
-      .item3 {
-        animation-delay: calc(80s / 8 * (8 - 3) * -1);
-      }
-      
-      .item4 {
-        animation-delay: calc(80s / 8 * (8 - 4) * -1);
-      }
-      
-      .item5 {
-        animation-delay: calc(80s / 8 * (8 - 5) * -1);
-      }
 
 
     .hero-title1{
@@ -152,16 +132,7 @@ a{
         grid-row: 2/3;
         grid-column: 1;
         z-index: 0;
-        color: #a0a0a0;
-        // max-width: 1536px;
-        position: relative;
-        overflow: hidden;
-        div{
-            position: absolute;
-            animation-timing-function: linear;
-            animation-duration: 30s;
-            animation-iteration-count: infinite;
-        }
+
     }
     .hero-title2{
         font-size: $size-default*7;
@@ -171,12 +142,6 @@ a{
         position: relative;
         overflow: hidden;
         margin-top: 5vh;
-    div{
-        position: absolute;
-        animation-timing-function: linear;
-        animation-duration: 30s;
-        animation-iteration-count: infinite;
-    }
     }
     .hero__image-container{
         text-align: center;
@@ -206,18 +171,14 @@ hr{
 }
 
 
-
 #about{
-    background: radial-gradient(circle at 100% 50%, rgba(57,57,57,1) 0%, rgba(38,38,38,1) 9%, rgba(22,22,22,1) 21%);
+    background: radial-gradient(circle at 100% 50%, rgba(51,51,51,1) 0%, rgba(28,28,28,1) 9%, rgba(14,14,14,1) 21%);
     width: 100%;
     .about__container{
-        height: 100%;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
         .about__container--text{
             width: 50%;
             font-size: $size-default*1.2;
+            height: 50%;
         }
         .about__container--image-container{
             img{
@@ -233,18 +194,18 @@ hr{
 }
 
 #attractions{
-    background: rgba(22,22,22,1);
+    background: rgba(14,14,14,1);
 
     .attractions__cards{
         width: 100%;
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         animation: fadeInBottom linear;
         animation-timeline: view();
         animation-range: entry 0% cover 45%;
     }
     .attractions__card{
-        background-color: $secondary-color;
+        background-color: $white;
         font-weight: 700;
         aspect-ratio: 2 / 0.8;
         width: 20vw;
@@ -267,21 +228,21 @@ hr{
             display: flex;
             align-items: center;
             font-size: $size-default*1.5;
-            height: 100%;
         }
     }
 }
 
 #key-traits{
-    background: radial-gradient(circle at 0% 50%, rgba(57,57,57,1) 0%, rgba(38,38,38,1) 9%, rgba(22,22,22,1) 21%);
+    background: radial-gradient(circle at 0% 50%, rgba(51,51,51,1) 0%, rgba(28,28,28,1) 9%, rgba(14,14,14,1) 21%);;
 
     .key-traits__grid-container{
-        height: 100%;
         display: grid;
         grid-template-columns: 7% 38% 10% 38% 7%;
-        grid-template-rows: 40% 40% 20%;
-        grid-template-areas:". first_trait vertical_line third_trait ."
-                            ". second_trait vertical_line fourth_trait ."
+        grid-template-rows: 20% 20% 20% 20% 20%;
+        grid-template-areas:". first_trait  vertical_line . ."
+                            ". .            vertical_line third_trait ."
+                            ". second_trait vertical_line . ."
+                            ". .            vertical_line fourth_trait ."
                             ". . . . .";
         .key-trait{
             &:nth-child(1){
@@ -308,7 +269,6 @@ hr{
     .vertical-line{
         grid-area: vertical_line;
         background-color: $accent-color;
-        height: 100%;
         border: none;
         width: $size-small;
         margin-bottom: $size-default*4;
@@ -319,12 +279,8 @@ hr{
 
 }
 
-.margin__0{
-    margin: 0;
-}
-
 #offers{
-    background: rgba(22,22,22,1);
+    background: rgba(14,14,14,1);
     .offers__subtitle{
         max-width: 60%;
         margin: $size-default auto 0 auto;
@@ -334,12 +290,12 @@ hr{
     .offers--list{
         margin-top: $size-default;
         display: grid;
-        grid-template-columns: 14% 30% 12% 30% 14%;
-        grid-template-rows: 50% 50%;
+        grid-template-columns: 15% 31% 8% 31% 15%;
+        grid-template-rows: 40% 40%;
         grid-template-areas: ". first_offer . third_offer ."
                              ". second_offer . fourth_offer .";
-        height: 100%;
         .offer{
+
             &:nth-child(1){
                 grid-area: first_offer;
             }
@@ -357,7 +313,7 @@ hr{
 }
 
 #contact{
-    background: rgba(22,22,22,1);
+    background: rgba(14,14,14,1);
     height: 100vh;
     display: grid;
     grid-template-rows: 100px 9% 1fr;
@@ -390,7 +346,7 @@ hr{
             animation-range: entry 0% cover 45%;
             width: $size-default*35;
             height: $size-default*35;
-            background-color: $secondary-color;
+            background-color: $white;
             border-radius: 10%;
             margin-left: 10vw;
             padding: $size-default*2;
@@ -404,9 +360,6 @@ hr{
             }
             .contact__information{
                 margin: $size-default*3;
-                display: flex;
-                align-items: center;
-                justify-content: space-evenly;
                 .svg{
                     width: 30%;
                 }
@@ -458,15 +411,6 @@ hr{
     animation-timeline: view();
     animation-range: entry 0% cover 25%;
 }
-
-@keyframes appear {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
 
 @keyframes fadeInTop {
     from {
@@ -521,55 +465,62 @@ hr{
     }
 }
 
-@keyframes pulse {
-    from {
-      transform: scale3d(1, 1, 1);
-    }
-  
-    50% {
-      transform: scale3d(1.05, 1.05, 1.05);
-    }
-  
-    to {
-      transform: scale3d(1, 1, 1);
-    }
-  }
+//   .scroller {
+//    max-width: 1080;
+// }
 
-  .scroller {
-    width: 100vw;
-    max-width: 1500px;
-  }
-  
-  .scroller__inner {
-    display: flex;
-    flex-wrap: wrap;
-    gap: $size-default*3;
-  }
-  
-  .scroller[data-animated="true"] {
-    overflow: hidden;
-    -webkit-mask: linear-gradient(
-      90deg,
-      transparent,
-      white 20%,
-      white 80%,
-      transparent
-    );
-    mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
-    --_animation-duration: 35s;
-    --_animation-direction: forwards;
-
+.scroller__inner {
+  padding-block: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
-  
-  .scroller[data-animated="true"] .scroller__inner {
-    width: max-content;
-    flex-wrap: nowrap;
-    animation: scroll var(--_animation-duration, 40s)
-      var(--_animation-direction, forwards) linear infinite;
+
+.scroller[data-animated="true"] {
+  overflow: hidden;
+  -webkit-mask: linear-gradient(
+    90deg,
+    transparent,
+    white 20%,
+    white 80%,
+    transparent
+  );
+  mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+}
+
+.scroller[data-animated="true"] .scroller__inner {
+  width: max-content;
+  flex-wrap: nowrap;
+  animation: scroll var(--_animation-duration, 40s)
+    var(--_animation-direction, forwards) linear infinite;
+}
+
+.scroller[data-direction="right"] {
+  --_animation-direction: reverse;
+}
+
+.scroller[data-direction="left"] {
+  --_animation-direction: forwards;
+}
+
+.scroller[data-speed="fast"] {
+  --_animation-duration: 30s;
+}
+
+.scroller[data-speed="slow"] {
+  --_animation-duration: 60s;
+}
+
+@keyframes scroll {
+  to {
+    transform: translate(calc(-50% - 0.5rem));
   }
-  
-  @keyframes scroll {
-    to {
-      transform: translate(calc(-50% - 0.5rem));
-    }
-  }
+}
+
+.scroller__gap{
+    margin-left: $size-default*10;
+}
+
+.scroller__gap2{
+    margin-left: $size-default*3;
+}

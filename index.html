@@ -26,56 +26,30 @@
 
     <main>
         <section id="hero">
-            <div class="glow_shared glow_hero"></div>
-                <!-- <div class="hero__titles--main-title">Wodzirej <br> Mikulski</div> -->
-                <!-- <div class="hero__titles--subtitle">Muzyka, Zabawa, Emocje <br> Profesjonalny Wodzirej z Pasją od Najmłodszych Lat!</div> -->
-                 <div class="hero-title1">
-                    <div class="itemLeft item1">Wodzirej</div>
-                    <div class="itemLeft item2">Wodzirej</div>
-                    <div class="itemLeft item3">Wodzirej</div>
-                    <div class="itemLeft item4">Wodzirej</div>
-                    <div class="itemLeft item5">Wodzirej</div>
+            <div class="scroller hero-title1" data-direction="right" data-speed="slow">
+                 <div class=" scroller__inner">
+                    <div class="scroller__gap" >Wodzirej</div>
+                    <div class="scroller__gap" >Wodzirej</div>
+                    <div class="scroller__gap" >Wodzirej</div>
+                    <div class="scroller__gap" >Wodzirej</div>
+                    <div class="scroller__gap" >Wodzirej</div>
+                    <div class="scroller__gap" >Wodzirej</div>
                  </div>
-                 <div class="hero-title2">
-                    <div class="itemRight item1">Mikulski</div>
-                    <div class="itemRight item2">Mikulski</div>
-                    <div class="itemRight item3">Mikulski</div>
-                    <div class="itemRight item4">Mikulski</div>
-                    <div class="itemRight item5">Mikulski</div>
+            </div>     
+            <div class="scroller hero-title2" data-direction="left" data-speed="slow">
+                 <div class=" scroller__inner">
+                    <div class="scroller__gap">Mikulski</div>
+                    <div class="scroller__gap">Mikulski</div>
+                    <div class="scroller__gap">Mikulski</div>
+                    <div class="scroller__gap">Mikulski</div>
+                    <div class="scroller__gap">Mikulski</div>
+                    <div class="scroller__gap">Mikulski</div>
                  </div>
+            </div>
             <div class="hero__image-container">
                 <img src="Images/wodzirej.png">
             </div>
-            <!-- <button class="hero__button"><a href="#contact">Kontakt</a></button> -->
         </section>
-
-        <section id="offers" class="text-align--center section-grid">
-            <div class="grid-title animation_fadeInTop">
-                <div class="section-title">Nie Tylko Wesela!</div>
-                <hr>                    
-                <div class="offers__subtitle">Choć wesela to moja specjalność, z przyjemnością zadbam o oprawę muzyczną i prowadzenie także innych wyjątkowych wydarzeń, takich jak:</div>
-            </div>
-            <div class="grid-content">
-                <div class="offers--list">
-                    <div class="offer animation_fadeInLeft">
-                        <div class="highlited-text">Wydarzenia w plenerze</div>
-                        Imprezy na świeżym powietrzu, takie jak pikniki, czy festyny, to doskonała okazja na świetną zabawę. Zmobilizuję gości do tańca, oferując profesjonalne nagłośnienie, wiele zabaw i odpowiednią muzykę dopasowaną do atmosfery wydarzenia.
-                    </div>
-                    <div class="offer animation_fadeInLeft2">
-                        <div class="highlited-text">Bale Sylwestrowe</div>
-                        Pożegnaj stary rok i przywitaj nowy w rytmach najlepszych hitów! Zadbam o niezapomnianą zabawę, efekty świetlne i dynamiczną muzykę, która sprawi, że Twoja impreza będzie pełna magii i emocji.
-                    </div>
-                    <div class="offer animation_fadeInRight">
-                        <div class="highlited-text">Imprezy urodzinowe i jubileusze</div>
-                        Każde święto zasługuje na niezapomnianą oprawę – od kameralnych przyjęć po huczne zabawy. Zadbam o odpowiednią muzykę i zabawy, które sprawią, że Twój dzień będzie wyjątkowy i pełen radości.
-                    </div>
-                    <div class="offer animation_fadeInRight2">
-                        <div class="highlited-text">Imprezy firmowe</div>
-                        Zorganizuję profesjonalną i energiczną atmosferę dla Twojej firmy, niezależnie od tego, czy to integracja, gala czy event promocyjny. Dzięki odpowiedniej muzyce i prowadzeniu, Twoi goście poczują się swobodni i zrelaksowani.
-                    </div>
-                </div>
-            </div>
-    </section>
 
         <section id="about" class="text-align--center section-grid">
                 <div class="grid-title animation_fadeInTop">
@@ -83,8 +57,8 @@
                     <hr>
                 </div>
                 <div class="grid-content">
-                    <div class="about__container">
-                        <div class="about__container--text animation_fadeInLeft2">
+                    <div class="about__container height100 flex-evenly">
+                        <div class="about__container--text animation_fadeInLeft2 secondary-background">
                             <div class="highlited-text">Cześć!</div> 
                             Nazywam się Wojciech i jestem wodzirejem oraz  DJ-em z wieloletnim doświadczeniem. Muzyka i prowadzenie imprez to nie tylko moja praca, ale przede wszystkim pasja, którą rozwijam od dzieciństwa. Uwielbiam tworzyć atmosferę, która łączy ludzi, wywołuje uśmiechy i sprawia, że każda chwila na parkiecie jest niezapomniana.
                         </div>
@@ -94,6 +68,34 @@
                     </div>
                 </div>
         </section>
+
+        <section id="offers" class="text-align--center section-grid">
+            <div class="grid-title animation_fadeInTop">
+                <div class="section-title">Nie Tylko Wesela!</div>
+                <hr>                    
+                <div class="offers__subtitle">Choć wesela to moja specjalność, z przyjemnością zadbam o oprawę muzyczną i prowadzenie także innych wyjątkowych wydarzeń, takich jak:</div>
+            </div>
+            <div class="grid-content">
+                <div class="offers--list height100">
+                    <div class="offer animation_fadeInLeft secondary-background">
+                        <div class="highlited-text">Wydarzenia w plenerze</div>
+                        Imprezy na świeżym powietrzu, takie jak pikniki, czy festyny, to doskonała okazja na świetną zabawę. Zmobilizuję gości do tańca, oferując profesjonalne nagłośnienie, wiele zabaw i odpowiednią muzykę dopasowaną do atmosfery wydarzenia.
+                    </div>
+                    <div class="offer animation_fadeInLeft2 secondary-background">
+                        <div class="highlited-text">Bale Sylwestrowe</div>
+                        Pożegnaj stary rok i przywitaj nowy w rytmach najlepszych hitów! Zadbam o niezapomnianą zabawę, efekty świetlne i dynamiczną muzykę, która sprawi, że Twoja impreza będzie pełna magii i emocji.
+                    </div>
+                    <div class="offer animation_fadeInRight secondary-background">
+                        <div class="highlited-text">Imprezy urodzinowe i jubileusze</div>
+                        Każde święto zasługuje na niezapomnianą oprawę – od kameralnych przyjęć po huczne zabawy. Zadbam o odpowiednią muzykę i zabawy, które sprawią, że Twój dzień będzie wyjątkowy i pełen radości.
+                    </div>
+                    <div class="offer animation_fadeInRight2 secondary-background">
+                        <div class="highlited-text">Imprezy firmowe</div>
+                        Zorganizuję profesjonalną i energiczną atmosferę dla Twojej firmy, niezależnie od tego, czy to integracja, gala czy event promocyjny. Dzięki odpowiedniej muzyce i prowadzeniu, Twoi goście poczują się swobodni i zrelaksowani.
+                    </div>
+                </div>
+            </div>
+    </section>
         
         <section id="attractions" class="text-align--center section-grid">
                 <div class="grid-title animation_fadeInTop">
@@ -101,28 +103,28 @@
                     <hr>
                 </div>
                 <div class="grid-content">
-                    <div class="attractions__cards">
-                        <div class="scroller">
-                            <div class="scroller__inner" data-direction="right" data-speed="fast">
-                                <div class="attractions__card highlited-text">
+                    <div class="scroller animation_fadeInBottom" data-direction="right" data-speed="slow">
+                        <div class="attractions__cards">
+                            <div class="scroller__inner">
+                                <div class="attractions__card highlited-text scroller__gap2">
                                     <img src="Images/animacje.jpg">
-                                    <div class="attractions__card--title">Animacje dla dzieci </div>
+                                    <div class="attractions__card--title height100 highlited-text">Animacje dla dzieci </div>
                                 </div>
-                                <div class="attractions__card highlited-text">
+                                <div class="attractions__card highlited-text scroller__gap2">
                                     <img src="Images/taniec_w_chmurach.jpg">
-                                    <div class="attractions__card--title">Ciężki dym</div>
+                                    <div class="attractions__card--title height100 highlited-text">Ciężki dym</div>
                                 </div>
-                                <div class="attractions__card highlited-text">
+                                <div class="attractions__card highlited-text scroller__gap2">
                                     <img src="Images/tance_i_zabawy.jpg">
-                                    <div class="attractions__card--title">Wiele zabaw <br> i układów tanecznych</div>
+                                    <div class="attractions__card--title height100 highlited-text">Wiele zabaw <br> i układów tanecznych</div>
                                 </div>
-                                <div class="attractions__card highlited-text">
+                                <div class="attractions__card highlited-text scroller__gap2">
                                     <img src="Images/oswietlenie.jpg">
-                                    <div class="attractions__card--title">Efektowne oświetlenie sali <br> oraz widowiskowe efekty specjalne</div>
+                                    <div class="attractions__card--title height100 highlited-text">Efektowne oświetlenie sali <br> oraz widowiskowe efekty specjalne</div>
                                 </div>
-                                <div class="attractions__card highlited-text">
+                                <div class="attractions__card highlited-text scroller__gap2">
                                     <img src="Images/zimne_ognie_placeholder.jpg">
-                                    <div class="attractions__card--title">Zimne ognie</div>
+                                    <div class="attractions__card--title height100 highlited-text">Zimne ognie</div>
                                 </div>
                             </div>
                         </div>
@@ -136,23 +138,23 @@
                     <hr>
                 </div>
                 <div class="grid-content">
-                    <div class="key-traits__grid-container">
-                        <div class="key-trait animation_fadeInRight">
+                    <div class="key-traits__grid-container height100">
+                        <div class="key-trait animation_fadeInRight secondary-background">
                             <div class="highlited-text">Indywidualne podejście</div>
                             <div>Każda impreza to unikalna historia, wszystko dostosowane do waszych oczekiwań!</div>
                         </div>
-                        <div class="key-trait animation_fadeInRight2">
+                        <div class="key-trait animation_fadeInRight2 secondary-background">
                             <div class="highlited-text">Profesjonalizm</div>
                             <div>Korzystam z profesjonalnych technologii nagłośnienia i oświetlenia, które zapewniają nie tylko doskonałe brzmienie, ale i wizualny efekt "wow".</div>
                         </div>
-                        <hr class="vertical-line">
-                        <div class="key-trait animation_fadeInLeft">
+                        <hr class="vertical-line height100">
+                        <div class="key-trait animation_fadeInLeft secondary-background">
                             <div>
                                 <div class="highlited-text">Muzyka</div>
                                 <div>Od klasycznych hitów, przez nowoczesne przeboje, po klimatyczne utwory na specjalne okazje</div>
                             </div>
                         </div>
-                        <div class="key-trait animation_fadeInLeft2">
+                        <div class="key-trait animation_fadeInLeft2 secondary-background">
                             <div>
                                 <div class="highlited-text">Doświadczenie</div>
                                 <div>Od lat prowadzę różnorodne wydarzenia, dlatego w każdej sytuacji potrafię zachować spokój i zadbać o idealny przebieg imprezy.</div>
@@ -172,7 +174,7 @@
                             <div class="highlited-text contact__informations__title">
                                 Chcesz poznać szczegóły? <br> Skontaktuj się ze mną!
                             </div>
-                            <div class="contact__information">
+                            <div class="contact__information flex-evenly">
                                 <div class="svg">
                                     <svg width="800px" height="800px" viewBox="0 0 24 24" >
                                     <path d="M4 3H7.5C8.05 3 8.5 3.45 8.5 4C8.5 5.25 8.7 6.45 9.07 7.57C9.18 7.92 9.1 8.31 8.82 8.59L6.62 10.79C8.06 13.62 10.38 15.93 13.21 17.38L15.41 15.18C15.61 14.99 15.86 14.89 16.12 14.89C16.22 14.89 16.33 14.9 16.43 14.94C17.55 15.31 18.76 15.51 20 15.51C20.55 15.51 21 15.96 21 16.51V20C21 20.55 20.55 21 20 21C10.61 21 3 13.39 3 4C3 3.45 3.45 3 4 3Z" fill="#000000"/>
@@ -183,7 +185,7 @@
                                 </div>
                             </div>
 
-                            <div class="contact__information">
+                            <div class="contact__information flex-evenly">
                                 <div class="svg">
                                     <svg fill="#000000" width="800px" height="800px" viewBox="-5.5 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M1.188 5.594h18.438c0.625 0 1.188 0.563 1.188 1.188v18.438c0 0.625-0.563 1.188-1.188 1.188h-18.438c-0.625 0-1.188-0.563-1.188-1.188v-18.438c0-0.625 0.563-1.188 1.188-1.188zM14.781 17.281h2.875l0.125-2.75h-3v-2.031c0-0.781 0.156-1.219 1.156-1.219h1.75l0.063-2.563s-0.781-0.125-1.906-0.125c-2.75 0-3.969 1.719-3.969 3.563v2.375h-2.031v2.75h2.031v7.625h2.906v-7.625z"></path>
@@ -194,7 +196,7 @@
                                 </div>
                             </div>
 
-                            <div class="contact__information">
+                            <div class="contact__information flex-evenly">
                                 <div class="svg">
                                     <svg fill="#000000" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" xml:space="preserve">
                                         <style type="text/css">
@@ -218,44 +220,6 @@
                 </div>
         </section>
     </main>
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-          anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href').substring(1);
-            const targetElement = document.getElementById(targetId);
-            if (targetElement) {
-              targetElement.scrollIntoView({
-                behavior: 'smooth',
-                block: 'center' 
-              });
-            }
-          });
-        });
-
-
-
-        const scrollers = document.querySelectorAll(".scroller");
-
-if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-  addAnimation();
-}
-
-function addAnimation() {
-  scrollers.forEach((scroller) => {
-    scroller.setAttribute("data-animated", true);
-
-    const scrollerInner = scroller.querySelector(".scroller__inner");
-    const scrollerContent = Array.from(scrollerInner.children);
-
-
-    scrollerContent.forEach((item) => {
-      const duplicatedItem = item.cloneNode(true);
-      duplicatedItem.setAttribute("aria-hidden", true);
-      scrollerInner.appendChild(duplicatedItem);
-    });
-  });
-}
-      </script>
+    <script src="js.js"></script>
 </body>
 </html>

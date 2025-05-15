@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap");
 * {
   box-sizing: border-box;
+  color: #f7f7f7;
 }
 
 html {
@@ -12,12 +13,20 @@ body {
   margin: 0;
   font-family: "Lato", sans-serif;
   background-attachment: fixed;
-  color: #FFFFFF;
 }
 
 a {
   text-decoration: none;
-  color: #FFFFFF;
+}
+
+.flex-evenly {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.height100 {
+  height: 100%;
 }
 
 .main-header {
@@ -49,26 +58,22 @@ a {
 .main-header .nav-desktop__items {
   list-style: none;
   display: flex;
-  margin: 0;
   padding: 0;
 }
 .main-header .nav-desktop__items .nav-desktop__item {
   margin: 0 1.5rem;
   font-weight: 700;
-  text-shadow: 1px 1px 0 #030303, -1px 1px 0 #030303, -1px -1px 0 #030303, 1px -1px 0 #030303;
-}
-.main-header .nav-desktop__items .nav-desktop__item a {
-  text-decoration: none;
-  color: #FFFFFF;
+  text-shadow: 1px 1px 0 #0e0e0e, -1px 1px 0 #0e0e0e, -1px -1px 0 #0e0e0e, 1px -1px 0 #0e0e0e;
 }
 .main-header .nav-desktop__items .nav-desktop__item a:hover {
   color: #E5B047;
 }
 
 .section-grid {
-  height: 70vh;
+  height: 80vh;
   display: grid;
   grid-template-rows: 25% 1fr;
+  grid-template-columns: 100%;
   grid-template-areas: "section_title" "section_content";
 }
 
@@ -86,61 +91,29 @@ a {
   font-size: 2rem;
 }
 
-@keyframes scrollLeft {
-  to {
-    left: -500px;
-  }
+.secondary-background {
+  background-color: #1a1a1a;
+  border-radius: 25px;
+  margin: 1rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-@keyframes scrollRight {
-  to {
-    right: -500px;
-  }
-}
+
 #hero {
-  background: radial-gradient(circle at 0% 50%, rgb(57, 57, 57) 0%, rgb(38, 38, 38) 9%, rgb(22, 22, 22) 21%);
+  background: radial-gradient(circle at 0% 50%, rgb(51, 51, 51) 0%, rgb(28, 28, 28) 9%, rgb(14, 14, 14) 21%);
   height: 100vh;
   display: grid;
   grid-template-rows: 20vh 1fr 1fr 1fr 15vh;
-  grid-template-columns: 100vw;
+  grid-template-columns: 100%;
   font-weight: 900;
-}
-#hero .itemRight {
-  right: max(1600px, 100% + 200px);
-  animation-name: scrollRight;
-}
-#hero .itemLeft {
-  left: max(1600px, 100%);
-  animation-name: scrollLeft;
-}
-#hero .item1 {
-  animation-delay: -70s;
-}
-#hero .item2 {
-  animation-delay: -60s;
-}
-#hero .item3 {
-  animation-delay: -50s;
-}
-#hero .item4 {
-  animation-delay: -40s;
-}
-#hero .item5 {
-  animation-delay: -30s;
 }
 #hero .hero-title1 {
   font-size: 7rem;
   grid-row: 2/3;
   grid-column: 1;
   z-index: 0;
-  color: #a0a0a0;
-  position: relative;
-  overflow: hidden;
-}
-#hero .hero-title1 div {
-  position: absolute;
-  animation-timing-function: linear;
-  animation-duration: 30s;
-  animation-iteration-count: infinite;
 }
 #hero .hero-title2 {
   font-size: 7rem;
@@ -150,12 +123,6 @@ a {
   position: relative;
   overflow: hidden;
   margin-top: 5vh;
-}
-#hero .hero-title2 div {
-  position: absolute;
-  animation-timing-function: linear;
-  animation-duration: 30s;
-  animation-iteration-count: infinite;
 }
 #hero .hero__image-container {
   text-align: center;
@@ -184,18 +151,13 @@ hr {
 }
 
 #about {
-  background: radial-gradient(circle at 100% 50%, rgb(57, 57, 57) 0%, rgb(38, 38, 38) 9%, rgb(22, 22, 22) 21%);
+  background: radial-gradient(circle at 100% 50%, rgb(51, 51, 51) 0%, rgb(28, 28, 28) 9%, rgb(14, 14, 14) 21%);
   width: 100%;
-}
-#about .about__container {
-  height: 100%;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
 }
 #about .about__container .about__container--text {
   width: 50%;
   font-size: 1.2rem;
+  height: 50%;
 }
 #about .about__container .about__container--image-container img {
   display: block;
@@ -203,22 +165,22 @@ hr {
   max-width: 400px;
   height: auto;
   border-radius: 1rem;
-  box-shadow: 5px 5px 2px #2c2c2c;
+  box-shadow: 5px 5px 2px #242424;
 }
 
 #attractions {
-  background: rgb(22, 22, 22);
+  background: rgb(14, 14, 14);
 }
 #attractions .attractions__cards {
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   animation: fadeInBottom linear;
   animation-timeline: view();
   animation-range: entry 0% cover 45%;
 }
 #attractions .attractions__card {
-  background-color: #FFFFFF;
+  background-color: #f7f7f7;
   font-weight: 700;
   aspect-ratio: 2/0.8;
   width: 20vw;
@@ -242,18 +204,16 @@ hr {
   display: flex;
   align-items: center;
   font-size: 1.5rem;
-  height: 100%;
 }
 
 #key-traits {
-  background: radial-gradient(circle at 0% 50%, rgb(57, 57, 57) 0%, rgb(38, 38, 38) 9%, rgb(22, 22, 22) 21%);
+  background: radial-gradient(circle at 0% 50%, rgb(51, 51, 51) 0%, rgb(28, 28, 28) 9%, rgb(14, 14, 14) 21%);
 }
 #key-traits .key-traits__grid-container {
-  height: 100%;
   display: grid;
   grid-template-columns: 7% 38% 10% 38% 7%;
-  grid-template-rows: 40% 40% 20%;
-  grid-template-areas: ". first_trait vertical_line third_trait ." ". second_trait vertical_line fourth_trait ." ". . . . .";
+  grid-template-rows: 20% 20% 20% 20% 20%;
+  grid-template-areas: ". first_trait  vertical_line . ." ". .            vertical_line third_trait ." ". second_trait vertical_line . ." ". .            vertical_line fourth_trait ." ". . . . .";
 }
 #key-traits .key-traits__grid-container .key-trait:nth-child(1) {
   grid-area: first_trait;
@@ -276,7 +236,6 @@ hr {
 #key-traits .vertical-line {
   grid-area: vertical_line;
   background-color: #E5B047;
-  height: 100%;
   border: none;
   width: 0.2rem;
   margin-bottom: 4rem;
@@ -285,12 +244,8 @@ hr {
   font-weight: 400;
 }
 
-.margin__0 {
-  margin: 0;
-}
-
 #offers {
-  background: rgb(22, 22, 22);
+  background: rgb(14, 14, 14);
 }
 #offers .offers__subtitle {
   max-width: 60%;
@@ -301,10 +256,9 @@ hr {
 #offers .offers--list {
   margin-top: 1rem;
   display: grid;
-  grid-template-columns: 14% 30% 12% 30% 14%;
-  grid-template-rows: 50% 50%;
+  grid-template-columns: 15% 31% 8% 31% 15%;
+  grid-template-rows: 40% 40%;
   grid-template-areas: ". first_offer . third_offer ." ". second_offer . fourth_offer .";
-  height: 100%;
 }
 #offers .offers--list .offer:nth-child(1) {
   grid-area: first_offer;
@@ -320,7 +274,7 @@ hr {
 }
 
 #contact {
-  background: rgb(22, 22, 22);
+  background: rgb(14, 14, 14);
   height: 100vh;
   display: grid;
   grid-template-rows: 100px 9% 1fr;
@@ -351,7 +305,7 @@ hr {
   animation-range: entry 0% cover 45%;
   width: 35rem;
   height: 35rem;
-  background-color: #FFFFFF;
+  background-color: #f7f7f7;
   border-radius: 10%;
   margin-left: 10vw;
   padding: 2rem;
@@ -366,16 +320,13 @@ hr {
 }
 #contact .grid-content--contact .contact__informations .contact__information {
   margin: 3rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
 }
 #contact .grid-content--contact .contact__informations .contact__information .svg {
   width: 30%;
 }
 #contact .grid-content--contact .contact__informations .contact__information .contact__information--text {
   width: 70%;
-  color: #030303;
+  color: #0e0e0e;
   font-size: 1.5rem;
   font-weight: 700;
 }
@@ -416,14 +367,6 @@ hr {
   animation-range: entry 0% cover 25%;
 }
 
-@keyframes appear {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
 @keyframes fadeInTop {
   from {
     opacity: 0;
@@ -468,34 +411,17 @@ hr {
     transform: translateX(0px);
   }
 }
-@keyframes pulse {
-  from {
-    transform: scale3d(1, 1, 1);
-  }
-  50% {
-    transform: scale3d(1.05, 1.05, 1.05);
-  }
-  to {
-    transform: scale3d(1, 1, 1);
-  }
-}
-.scroller {
-  width: 100vw;
-  max-width: 1500px;
-}
-
 .scroller__inner {
+  padding-block: 1rem;
   display: flex;
   flex-wrap: wrap;
-  gap: 3rem;
+  gap: 1rem;
 }
 
 .scroller[data-animated=true] {
   overflow: hidden;
   -webkit-mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
   mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
-  --_animation-duration: 35s;
-  --_animation-direction: forwards;
 }
 
 .scroller[data-animated=true] .scroller__inner {
@@ -504,10 +430,33 @@ hr {
   animation: scroll var(--_animation-duration, 40s) var(--_animation-direction, forwards) linear infinite;
 }
 
+.scroller[data-direction=right] {
+  --_animation-direction: reverse;
+}
+
+.scroller[data-direction=left] {
+  --_animation-direction: forwards;
+}
+
+.scroller[data-speed=fast] {
+  --_animation-duration: 30s;
+}
+
+.scroller[data-speed=slow] {
+  --_animation-duration: 60s;
+}
+
 @keyframes scroll {
   to {
     transform: translate(calc(-50% - 0.5rem));
   }
+}
+.scroller__gap {
+  margin-left: 10rem;
+}
+
+.scroller__gap2 {
+  margin-left: 3rem;
 }
 
 /*# sourceMappingURL=style.css.map */
